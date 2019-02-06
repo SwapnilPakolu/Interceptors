@@ -1,14 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div >
   
-    <div class="loader" style="text-align:center"  ajax-busy-indicator></div>
+    <div class="loader inactive" style="text-align:center"  ajax-busy-indicator hideDelay='900'></div>
   
   <h1>
     Welcome to {{ title }}!
   </h1>
   
   <button (click)="requestData()">request Data</button>
-  <pre>{{data}}</pre>
+  <pre>{{data1}}</pre>
+<br>
+<button (click)="requestXMLData()">request XML Data</button>
+<pre>{{data2}}</pre>
 <br>
   <button (click)="request404Data()">request 404 Data</button>
   

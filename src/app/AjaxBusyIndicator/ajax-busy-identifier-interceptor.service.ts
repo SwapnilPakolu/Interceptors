@@ -19,13 +19,7 @@ export class AjaxBusyIdentifierInterceptorService implements HttpInterceptor {
 
     this.beginRequest();
     return next.handle(req).pipe(
-      tap(
-
-        event => { },
-
-        error => this.endRequest()
-      ),
-
+      
       finalize(() => {
         this.endRequest();
       })

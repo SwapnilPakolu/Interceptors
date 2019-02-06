@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  isAuthenticated:boolean = true;
+  isAuthenticated:boolean = false;
   authToken:string = 'RandomTextdffasdhfkjfwqq1452fdsafas34fdsafadfasf55459tewvadf941sfhasdkjfhwkjh';
   constructor() { }
 }

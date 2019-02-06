@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor} from '@angular/common/http';
 import { AuthService } from './auth.service';
+import { HttpResponse } from '@angular/common/http';
 //import { Router } from '@angular/router';
 
 @Injectable({
@@ -15,12 +16,16 @@ Observable<HttpEvent<any>>
 {
   if(this.auth.isAuthenticated)
   {
+    
     request = request.clone({ headers: request.headers.set( 'Authorization', 'Bearer '+this.auth.authToken)});
+    
   }
   else
   {
   //  this.router.navigate(['LoginPage']);
   }
-return next.handle(request);
+
+  return next.handle(request);
+
 }
 }

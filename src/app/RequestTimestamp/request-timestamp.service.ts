@@ -34,7 +34,6 @@ export class RequestTimestampService implements HttpInterceptor {
             if (error instanceof HttpErrorResponse) {
               var endTime = (new Date()).getTime();
               var diff = endTime - startTime;
-
               console.log(error.url + " failed in " + diff + " milli seconds");
             }
           }
